@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片式布局与界面切换</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 题库选择 -->
+<div id="Cardbig" class="Cardbig">
+    <div id="cardmain">
+        <div class="card" id="Card1">
+            <h3>第一章选择填空基础知识</h3>
+            <div class="card-buttons">
+                <button class="btn btn-practice" id="btnToText1">测试</button>
+                <button class="btn btn-exam" id="btnToExam1">考试</button>
+            </div>
+        </div>
+        <div class="card" id="Card2">
+            <h3>CRC冗余校验</h3>
+            <div class="card-buttons">
+                <button class="btn btn-practice" id="btnToText2">测试</button>
+                <button class="btn btn-exam" id="btnToExam2">考试</button>
+            </div>
+        </div>
+        <div class="card" id="Card3">
+            <h3>码分复用技术习题 </h3>
+            <div class="card-buttons">
+                <button class="btn btn-practice" id="btnToText3">测试</button>
+                <button class="btn btn-exam" id="btnToExam3">考试</button>
+            </div>
+        </div>
+        <div class="card" id="Card4">
+            <h3>物理层习题 </h3>
+            <div class="card-buttons">
+                <button class="btn btn-practice" id="btnToText4">测试</button>
+                <button class="btn btn-exam" id="btnToExam4">考试</button>
+            </div>
+        </div>
+        <div class="card" id="Card5">
+            <h3>时延习题  </h3>
+            <div class="card-buttons">
+                <button class="btn btn-practice" id="btnToText5">测试</button>
+                <button class="btn btn-exam" id="btnToExam5">考试</button>
+            </div>
+        </div>
+    </div>
+    <div class="cardhide" id="cardtext">
+        <div class="title">
+            <h1 id="title"></h1>
+        </div>
+        <div class="top-actions">
+            <button class="action-btn" id="back-home">返回首页</button>
+            <button class="action-btn" id="select-question">选择题目</button>
+        </div>
+        <div class="quiz-container"></div>
+        <div class="navigation">
+            <div class="moudle">
+                <button class="btn1" id="prev-btn">上一题</button>
+            </div>
+            <div class="moudle">
+                <div class="progress" id="progress">1 / 1</div>
+            </div>
+            <div class="moudle">
+                <button class="btn1" id="next-btn">下一题</button>
+            </div>
+        </div>
+        <!-- 考试控制按钮 -->
+        <div class="exam-controls" id="exam-controls" style="display: none;">
+            <button id="submit-btn" onclick="submitExam()">提交考试</button>
+            <button onclick="exitExamMode()" class="exit-btn">退出考试</button>
+        </div>
+        <!-- 选择题目模态框 -->
+        <div id="question-selector" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>选择题目</h2>
+                <div id="question-list" class="question-list">
+                    <!-- 题目列表将在这里动态生成 -->
+                </div>
+            </div>
+        </div>
+        <!-- 题目数量选择模态框 -->
+        <div id="question-count-selector" class="modal">
+            <div class="modal-content">
+                <span class="close close-count">&times;</span>
+                <h2>选择题目数量</h2>
+                <div class="count-options">
+                    <button class="count-option" data-count="10">10题</button>
+                    <button class="count-option" data-count="20">20题</button>
+                    <button class="count-option" data-count="30">30题</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="C_internet.js"></script>-->
+<script src="script.js"></script>
+</body>
+</html>
